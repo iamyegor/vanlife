@@ -14,8 +14,15 @@ body {
   margin: 0;
   font-family: "Open sans", sans-serif;
   font-size: 16px;
+  background-color: #fff7ed;
 }
 
 button {
   font-family: "Open sans";
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

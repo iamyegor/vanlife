@@ -5,6 +5,7 @@ import "../styles/header.css";
 import "../styles/index.css";
 import "../styles/footer.css";
 import Vans from "../pages/Vans";
+import VanDetail from "../pages/VanDetail";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
       {/* <footer className="footer">Ⓒ 2022 #VANLIFE</footer> */}
     </BrowserRouter>
