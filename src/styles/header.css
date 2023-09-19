@@ -22,6 +22,10 @@
   font-weight: 600;
 }
 
+.header__right-nav > .header__nav-item {
+  margin-left: 20px;
+}
+
 .header__nav-item--selected {
   text-decoration: underline;
   text-decoration-thickness: 2px; 

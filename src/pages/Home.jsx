@@ -1,4 +1,4 @@
-import "../styles/home/home.css";
+import "../styles/home.css";
 import thumbnail from "../assets/home-img.png";
 
 export default function Home() {

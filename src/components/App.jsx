@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import About from "./About";
-import Home from "./Home";
-import "../styles/header/header.css";
+import About from "../pages/About";
+import Home from "../pages/Home";
+import "../styles/header.css";
 import "../styles/index.css";
-import "../styles/footer/footer.css";
+import "../styles/footer.css";
+import Vans from "../pages/Vans";
 
 export default function App() {
   return (
@@ -19,14 +20,19 @@ export default function App() {
             <Link className="header__nav-item" to="/about">
               About
             </Link>
+
+            <Link className="header__nav-item" to="/vans">
+              Vans
+            </Link>
           </div>
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/vans" element={<Vans />} />
       </Routes>
-      <footer className="footer">Ⓒ 2022 #VANLIFE</footer>
+      {/* <footer className="footer">Ⓒ 2022 #VANLIFE</footer> */}
     </BrowserRouter>
   );
 }

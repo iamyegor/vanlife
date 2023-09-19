@@ -1,5 +1,5 @@
 import chillingOnVan from "../assets/chilling-on-van.jpg";
-import "../styles/about/about.css";
+import "../styles/about.css";
 
 export default function About() {
   return (

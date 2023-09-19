@@ -1,0 +1,77 @@
+.vans {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 400px);
+  justify-content: center;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+.van {
+  display: flex;
+  flex-direction: column;
+}
+
+.van__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.van__name {
+  font-weight: 600;
+}
+
+.van__type {
+  margin-left: 10px;
+}
+
+.van__info-top {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.van__price {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.van__type {
+  background: gray;
+  color: white;
+  padding: 1px 3px 1px 3px;
+  border-radius: 3px;
+}
+
+.van__type--simple {
+  background-color: #588157;
+}
+
+.van__type--luxury {
+  background: #fb8500;
+}
+
+.van__type--rugged {
+  background-color: #023047;
+}
+
+@media (min-width: 720px) {
+  .vans {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media (min-width: 1000px) {
+  .vans {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (min-width: 1350px) {
+  .vans {
+    grid-template-columns: repeat(4, 300px);
+  }
+}
