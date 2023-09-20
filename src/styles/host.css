@@ -1,0 +1,25 @@
+.host {
+
+}
+
+.host__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.host__navigation-item {
+  margin-left: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.host__navigation-item:hover{
+  color: rgb(90, 90, 90);
+}
+
+.host__navigation-item--active {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}

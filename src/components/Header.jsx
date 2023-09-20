@@ -11,10 +11,12 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__right-nav">
+          <Link className="header__nav-item" to="/host">
+            Host
+          </Link>
           <Link className="header__nav-item" to="/about">
             About
           </Link>
-
           <Link className="header__nav-item" to="/vans">
             Vans
           </Link>
