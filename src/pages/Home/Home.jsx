@@ -1,5 +1,5 @@
-import "../styles/home.css";
-import thumbnail from "../assets/home-img.png";
+import "./Home.css";
+import thumbnail from "../../assets/home-img.png";
 
 export default function Home() {
   return (

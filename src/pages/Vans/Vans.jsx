@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Van from "../components/Van/index";
+import Van from "../../components/Van/index";
+import "./Vans.css";
 import { Link } from "react-router-dom";
 
 export default function Vans() {

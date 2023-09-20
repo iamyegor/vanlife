@@ -1,12 +1,3 @@
-.vans {
-  margin: 20px;
-  display: grid;
-  grid-template-columns: repeat(1, 100%);
-  justify-content: center;
-  column-gap: 30px;
-  row-gap: 20px;
-}
-
 .van {
   display: flex;
   flex-direction: column;
@@ -61,22 +52,4 @@
 
 .van__type--rugged {
   background-color: #023047;
-}
-
-@media (min-width: 720px) {
-  .vans {
-    grid-template-columns: repeat(2, 300px);
-  }
-}
-
-@media (min-width: 1000px) {
-  .vans {
-    grid-template-columns: repeat(3, 300px);
-  }
-}
-
-@media (min-width: 1350px) {
-  .vans {
-    grid-template-columns: repeat(4, 300px);
-  }
 }

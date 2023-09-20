@@ -6,4 +6,9 @@
   justify-content: center;
   height: 60px;
   flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
+  z-index: 99;
 }

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import "../styles/host.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Host.css";
 
 export default function Host() {
   const [hostOption, setHostOption] = useState("dashboard");

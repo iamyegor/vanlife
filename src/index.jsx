@@ -1,17 +1,15 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Vans from "./pages/Vans";
-import VanDetail from "./pages/VanDetail";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
+import Vans from "./pages/Vans/Vans";
+import VanDetail from "./pages/VanDetail/VanDetail";
 import Layout from "./components/Layout";
-import Host from "./components/Host";
-import Dashboard from "./pages/Host/Dashboard";
-import Reviews from "./pages/Host/Reviews";
-import Income from "./pages/Host/Income";
-import "./styles/header.css";
-import "./styles/index.css";
-import "./styles/footer.css";
+import Host from "./components/Host/Host";
+import Dashboard from "./pages/Host/Dashboard/Dashboard";
+import Reviews from "./pages/Host/Reviews/Reviews";
+import Income from "./pages/Host/Income/Income";
+import "./index.css";
 import "./server";
 
 const root = createRoot(document.getElementById("root"));
