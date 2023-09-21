@@ -8,9 +8,6 @@
   z-index: 99;
 }
 
-.header__title {
-}
-
 .header__navigation {
   display: flex;
   justify-content: space-between;
@@ -18,17 +15,15 @@
   width: 100%;
 }
 
-.header__nav-item {
+header a {
   text-decoration: none;
   color: black;
   font-weight: 600;
-}
-
-.header__right-nav > .header__nav-item {
   margin-left: 20px;
 }
 
-.header__nav-item--selected {
+.header__nav-item--active {
   text-decoration: underline;
-  text-decoration-thickness: 2px; 
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }

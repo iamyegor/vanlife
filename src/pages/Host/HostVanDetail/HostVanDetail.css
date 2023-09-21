@@ -1,0 +1,104 @@
+.host-van-detail {
+  margin-top: 40px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.host-van-detail__back-to-vans {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.host-van-detail__back-to-vans-img {
+  margin-right: 10px;
+  font-size: 18px;
+  color: rgb(82, 82, 82);
+}
+
+.host-van-detail__van {
+  margin-right: 15px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.host-van-detail__top-section {
+  display: flex;
+  align-items: center;
+}
+
+.host-van-detail__img {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.host-van-detail__upper-right-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.host-van-detail__type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  max-width: 80px;
+}
+
+.host-van-detail__type--simple {
+  background-color: #588157;
+}
+
+.host-van-detail__type--luxury {
+  background: #fb8500;
+}
+
+.host-van-detail__type--rugged {
+  background-color: #023047;
+}
+
+.host-van-detail__name {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.host-van-detail__price-a-day {
+  font-size: 18px;
+}
+
+.host-van-detail__price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.host-van-detail__midle-bar {
+  display: flex;
+  margin-top: 15px;
+}
+
+.host-van-detail__option {
+  margin-right: 20px;
+  font-weight: 600;
+  color: rgb(81, 81, 81);
+  cursor: pointer;
+}
+
+.host-van-detail__option--active {
+  color: black;
+  font-weight: 700;
+}
+
+.host-van-detail__detail-item {
+  margin-top: 15px;
+}
+
+.host-van-detail__key {
+  font-weight: 600;
+}

@@ -1,0 +1,43 @@
+.host-vans {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.host-vans__title {
+}
+
+.host-vans__van-image {
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+}
+
+.host-vans__van {
+  box-sizing: border-box;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.host-vans__van-info-section {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.host-vans__van-name {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.host-vans__van-price {
+  color: rgb(90, 90, 90);
+  font-weight: 600;
+}

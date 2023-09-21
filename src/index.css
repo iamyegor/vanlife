@@ -30,7 +30,18 @@ a {
   color: black;
 }
 
-/* Scrollbar width */
+.loading {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.underlined-text {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -45,12 +56,12 @@ a {
 ::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 20px;
-  box-shadow: inset 0 0 10px 10px #878787;
+  box-shadow: inset 0 0 10px 10px #ffd39e;
   border: solid 2px transparent;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow: inset 0 0 10px 10px #555;
+  box-shadow: inset 0 0 10px 10px #ffc680;
   border: solid 2px transparent;
 }

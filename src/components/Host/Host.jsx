@@ -1,50 +1,43 @@
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Host.css";
+import classNames from "classnames";
 
 export default function Host() {
-  const [hostOption, setHostOption] = useState("dashboard");
+  function getLinkClasses(isActive) {
+    return classNames(
+      "host__nav-item",
+      isActive ? "host__nav-item--active" : ""
+    );
+  }
 
   return (
     <div className="host">
       <div className="host__navigation">
-        <Link to="/host" onClick={() => setHostOption("dashboard")}>
-          <span
-            className={`host__navigation-item ${
-              hostOption === "dashboard" ? "host__navigation-item--active" : ""
-            }`}
-          >
-            Dashboard
-          </span>
-        </Link>
-        <Link to="/host/income" onClick={() => setHostOption("income")}>
-          <span
-            className={`host__navigation-item ${
-              hostOption === "income" ? "host__navigation-item--active" : ""
-            }`}
-          >
-            Income
-          </span>
-        </Link>
-        <Link to="/host/vans" onClick={() => setHostOption("vans")}>
-          <span
-            className={`host__navigation-item ${
-              hostOption === "vans" ? "host__navigation-item--active" : ""
-            }`}
-          >
-            Vans
-          </span>
-        </Link>
-        <Link to="/host/reviews" onClick={() => setHostOption("reviews")}>
-          <span
-            className={`host__navigation-item ${
-              hostOption === "reviews" ? "host__navigation-item--active" : ""
-            }`}
-          >
-            Reviews
-          </span>
-        </Link>
+        <NavLink
+          to="/host/"
+          className={({ isActive }) => getLinkClasses(isActive)}
+        >
+          <span>Dashboard</span>
+        </NavLink>
+        <NavLink
+          to="/host/income"
+          className={({ isActive }) => getLinkClasses(isActive)}
+        >
+          <span>Income</span>
+        </NavLink>
+        <NavLink
+          to="/host/vans"
+          className={({ isActive }) => getLinkClasses(isActive)}
+        >
+          <span>Vans</span>
+        </NavLink>
+        <NavLink
+          to="/host/reviews"
+          className={({ isActive }) => getLinkClasses(isActive)}
+        >
+          <span>Reviews</span>
+        </NavLink>
       </div>
       <Outlet />
     </div>

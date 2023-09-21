@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import "./Van-detail.css";
+import "./Van-Detail.css";
 
 export default function VanDetail() {
   const { id } = useParams();
