@@ -13,11 +13,14 @@ import Reviews from "pages/Host/Reviews/Reviews";
 import Income from "pages/Host/Income/Income";
 import HostVans from "pages/Host/HostVans/HostVans";
 import HostVanDetail from "pages/Host/HostVanDetail/HostVanDetail";
+import HostVanPhotos from "components/HostVanPhotos/HostVanPhotos";
+import HostVanInfo from "components/HostVanInfo/HostVanInfo";
+import HostVanPricing from "components/HostVanPricing/HostVanPricing";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Routes>    
+    <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -28,7 +31,11 @@ root.render(
           <Route index element={<Dashboard />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="vans" element={<HostVans />} />
-          <Route path="vans/:id" element={<HostVanDetail />} />
+          <Route path="vans/:id" element={<HostVanDetail />}>
+            <Route index element={<HostVanInfo />} />
+            <Route path="photos" element={<HostVanPhotos />} />
+            <Route path="pricing" element={<HostVanPricing />} />
+          </Route>
           <Route path="income" element={<Income />} />
         </Route>
       </Route>

@@ -67,6 +67,7 @@
 .host-van-detail__name {
   margin: 0;
   margin-top: 10px;
+  font-size: 24px;
 }
 
 .host-van-detail__price-a-day {
@@ -93,12 +94,4 @@
 .host-van-detail__option--active {
   color: black;
   font-weight: 700;
-}
-
-.host-van-detail__detail-item {
-  margin-top: 15px;
-}
-
-.host-van-detail__key {
-  font-weight: 600;
 }

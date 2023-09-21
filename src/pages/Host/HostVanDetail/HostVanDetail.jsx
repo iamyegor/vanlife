@@ -1,12 +1,21 @@
 import useVanDetail from "hooks/useVanDetail";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import "./HostVanDetail.css";
-import { Link } from "react-router-dom";
+import "./host-van-detail.css";
+import { Link, NavLink } from "react-router-dom";
+import classNames from "classnames";
 
 export default function HostVanDetail() {
   const { id } = useParams();
   const vanDetail = useVanDetail(id);
+
+  function getLinkClasses(isActive) {
+    console.log(isActive);
+    return classNames(
+      "host-van-detail__option",
+      isActive ? "host-van-detail__option--active underlined-text" : ""
+    );
+  }
 
   return (
     <div className="host-van-detail">
@@ -40,36 +49,27 @@ export default function HostVanDetail() {
               </div>
             </div>
             <div className="host-van-detail__midle-bar">
-              <div
-                className="host-van-detail__option 
-                host-van-detail__option--active 
-                underlined-text"
+              <NavLink
+                to="."
+                end
+                className={({ isActive }) => getLinkClasses(isActive)}
               >
                 Details
-              </div>
-              <div className="host-van-detail__option">Pricing</div>
-              <div className="host-van-detail__option">Photos</div>
+              </NavLink>
+              <NavLink
+                to="pricing"
+                className={({ isActive }) => getLinkClasses(isActive)}
+              >
+                Pricing
+              </NavLink>
+              <NavLink
+                to="photos"
+                className={({ isActive }) => getLinkClasses(isActive)}
+              >
+                Photos
+              </NavLink>
             </div>
-            <div className="host-van-detail__details">
-              <div className="host-van-detail__detail-item">
-                <span className="host-van-detail__key">Name: </span>
-                <span className="host-van-detail__value">{vanDetail.name}</span>
-              </div>
-              <div className="host-van-detail__detail-item">
-                <span className="host-van-detail__key">Category: </span>
-                <span className="host-van-detail__value">{vanDetail.type}</span>
-              </div>
-              <div className="host-van-detail__detail-item">
-                <span className="host-van-detail__key">Description: </span>
-                <span className="host-van-detail__value">
-                  {vanDetail.description}
-                </span>
-              </div>
-              <div className="host-van-detail__detail-item">
-                <span className="host-van-detail__key">Visibility: </span>
-                <span className="host-van-detail__value">public</span>
-              </div>
-            </div>
+            <Outlet context={{ vanDetail }} />
           </div>
         </>
       ) : (

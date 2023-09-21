@@ -4,7 +4,6 @@
   justify-content: space-between;
   background-color: #fff7ed;
   padding: 0px 20px 0px 20px;
-  height: 75px;
   z-index: 99;
 }
 
@@ -20,6 +19,12 @@ header a {
   color: black;
   font-weight: 600;
   margin-left: 20px;
+}
+
+.header__left-nav {
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .header__nav-item--active {

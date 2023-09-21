@@ -15,25 +15,26 @@ export default function Host() {
     <div className="host">
       <div className="host__navigation">
         <NavLink
-          to="/host/"
+          to="/host"
+          end
           className={({ isActive }) => getLinkClasses(isActive)}
         >
           <span>Dashboard</span>
         </NavLink>
         <NavLink
-          to="/host/income"
+          to="income"
           className={({ isActive }) => getLinkClasses(isActive)}
         >
           <span>Income</span>
         </NavLink>
         <NavLink
-          to="/host/vans"
+          to="vans"
           className={({ isActive }) => getLinkClasses(isActive)}
         >
           <span>Vans</span>
         </NavLink>
         <NavLink
-          to="/host/reviews"
+          to="reviews"
           className={({ isActive }) => getLinkClasses(isActive)}
         >
           <span>Reviews</span>

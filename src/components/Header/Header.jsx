@@ -16,7 +16,7 @@ export default function Header() {
             className={({ isActive }) => {
               return isActive ? "header__nav-item--active" : "";
             }}
-            to="/host/"
+            to="host"
           >
             Host
           </NavLink>
@@ -24,7 +24,7 @@ export default function Header() {
             className={({ isActive }) => {
               return isActive ? "header__nav-item--active" : "";
             }}
-            to="/about"
+            to="about"
           >
             About
           </NavLink>
@@ -32,7 +32,7 @@ export default function Header() {
             className={({ isActive }) => {
               return isActive ? "header__nav-item--active" : "";
             }}
-            to="/vans"
+            to="vans"
           >
             Vans
           </NavLink>

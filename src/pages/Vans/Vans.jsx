@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-import Van from "components/Van/index";
+import { Link, useSearchParams } from "react-router-dom";
 import "./Vans.css";
-import { Link } from "react-router-dom";
+import Van from "components/Van/index";
+import useVans from "hooks/useVans";
 
 export default function Vans() {
-  const [vans, setVans] = useState([]);
+  const vans = useVans();
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/api/vans");
-      const data = await response.json();
-      setVans(data.vans);
-    })();
-  }, []);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
 
-  const vansElements = vans.map((van) => {
+  const vansElements = displayedVans.map((van) => {
     return (
       <Link onClick={() => cacheVan(van)} key={van.id} to={`/vans/${van.id}`}>
         <Van>
@@ -40,6 +38,27 @@ export default function Vans() {
   return (
     <div>
       <h1 className="explore-vans">Explore our van options </h1>
+      <div className="van-filters">
+        <Link
+          to="?type=rugged"
+          className="van-filter__item van-filter__item--rugged"
+        >
+          rugged
+        </Link>
+        <Link
+          to="?type=simple"
+          className="van-filter__item van-filter__item--simple"
+        >
+          simple
+        </Link>
+        <Link
+          to="?type=luxury"
+          className="van-filter__item van-filter__item--luxury"
+        >
+          luxury
+        </Link>
+        <Link to=".">Clear filter</Link>
+      </div>
       <div className="vans">{vansElements}</div>
     </div>
   );
