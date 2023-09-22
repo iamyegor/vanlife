@@ -38,6 +38,7 @@ root.render(
           </Route>
           <Route path="income" element={<Income />} />
         </Route>
+        <Route path="*" element={<h1>Page not found!</h1>} />
       </Route>
     </Routes>
   </BrowserRouter>

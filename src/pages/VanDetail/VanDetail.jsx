@@ -1,7 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import "./Van-Detail.css";
 
 export default function VanDetail() {
+  const { state } = useLocation();
+  const searchParams = state?.searchParams || "";
   const { id } = useParams();
   const van = getCachedVan(id);
 
@@ -10,6 +13,18 @@ export default function VanDetail() {
   }
   return (
     <div className="van-detail-container">
+      <div className="van-detail__link-container">
+        <Link
+          to={`../${searchParams}`}
+          relative="path"
+          className="van-detail__back-to-vans"
+        >
+          <AiOutlineArrowLeft className="van-detail__back-to-vans-img" />
+          <div className="van-detail__back-to-vans-text underlined-text">
+            Back to all vans
+          </div>
+        </Link>
+      </div>
       <div className="van-detail">
         <img src={van.imageUrl} />
         <h2>{van.name}</h2>

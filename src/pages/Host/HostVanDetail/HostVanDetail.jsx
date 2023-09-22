@@ -21,12 +21,13 @@ export default function HostVanDetail() {
     <div className="host-van-detail">
       {vanDetail ? (
         <>
-          <Link to="/host/vans" className="host-van-detail__back-to-vans">
+          <Link
+            to=".."
+            relative="path"
+            className="host-van-detail__back-to-vans"
+          >
             <AiOutlineArrowLeft className="host-van-detail__back-to-vans-img" />
-            <div
-              to="/host/vans"
-              className="host-van-detail__back-to-vans-text underlined-text"
-            >
+            <div className="host-van-detail__back-to-vans-text underlined-text">
               Back to all vans
             </div>
           </Link>

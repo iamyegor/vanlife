@@ -1,8 +1,10 @@
 .van-detail-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .van-detail-container .back-button {
@@ -20,7 +22,7 @@
 .van-detail {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 500px;
   color: #161616;
 }
 
@@ -79,3 +81,22 @@
   cursor: pointer;
 }
 
+.van-detail__link-container {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+
+.van-detail__back-to-vans {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.van-detail__back-to-vans-img {
+  margin-right: 10px;
+  font-size: 18px;
+  color: rgb(82, 82, 82);
+}

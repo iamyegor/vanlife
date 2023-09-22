@@ -1,7 +1,8 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, NavLink } from "react-router-dom";
 import "./Vans.css";
 import Van from "components/Van/index";
 import useVans from "hooks/useVans";
+import classNames from "classnames";
 
 export default function Vans() {
   const vans = useVans();
@@ -14,7 +15,12 @@ export default function Vans() {
 
   const vansElements = displayedVans.map((van) => {
     return (
-      <Link onClick={() => cacheVan(van)} key={van.id} to={`/vans/${van.id}`}>
+      <Link
+        state={{ searchParams: `?${searchParams.toString()}` }}
+        onClick={() => cacheVan(van)}
+        key={van.id}
+        to={van.id}
+      >
         <Van>
           <Van.Image>
             <img src={van.imageUrl} />
@@ -31,33 +37,35 @@ export default function Vans() {
     );
   });
 
+  function getFilterClasses(type) {
+    return classNames(
+      "van-filter__item",
+      type === typeFilter && `van-filter__item--${type}`
+    );
+  }
+
   function cacheVan(van) {
     localStorage.setItem(`van`, JSON.stringify(van));
   }
 
   return (
-    <div>
+    <div className="vans-container">
       <h1 className="explore-vans">Explore our van options </h1>
       <div className="van-filters">
-        <Link
-          to="?type=rugged"
-          className="van-filter__item van-filter__item--rugged"
-        >
+        <NavLink to="?type=rugged" className={getFilterClasses("rugged")}>
           rugged
-        </Link>
-        <Link
-          to="?type=simple"
-          className="van-filter__item van-filter__item--simple"
-        >
+        </NavLink>
+        <NavLink to="?type=simple" className={getFilterClasses("simple")}>
           simple
-        </Link>
-        <Link
-          to="?type=luxury"
-          className="van-filter__item van-filter__item--luxury"
-        >
+        </NavLink>
+        <NavLink to="?type=luxury" className={getFilterClasses("luxury")}>
           luxury
-        </Link>
-        <Link to=".">Clear filter</Link>
+        </NavLink>
+        {typeFilter && (
+          <NavLink to="." className="van-filter__item">
+            Clear filter
+          </NavLink>
+        )}
       </div>
       <div className="vans">{vansElements}</div>
     </div>
