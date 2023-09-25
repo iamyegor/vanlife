@@ -1,9 +1,15 @@
-import useHostVans from "hooks/useHostVans";
 import "./HostVans.css";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "api";
+import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+
+export async function loader() {
+  if (!checkIsLoggedIn()) return redirectToLogin();
+  return await getHostVans();
+}
 
 export default function HostVans() {
-  const hostVans = useHostVans();
+  const hostVans = useLoaderData();
 
   const hostVansElements = hostVans.map((van) => {
     return (

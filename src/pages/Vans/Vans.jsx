@@ -1,11 +1,21 @@
-import { Link, useSearchParams, NavLink } from "react-router-dom";
+import {
+  Link,
+  useSearchParams,
+  NavLink,
+  useLoaderData,
+  redirect,
+} from "react-router-dom";
 import "./Vans.css";
 import Van from "components/Van/index";
-import useVans from "hooks/useVans";
 import classNames from "classnames";
+import { getVans } from "api";
+
+export async function loader() {
+  return await getVans();
+}
 
 export default function Vans() {
-  const vans = useVans();
+  const vans = useLoaderData();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");

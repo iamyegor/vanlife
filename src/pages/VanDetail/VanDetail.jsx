@@ -1,16 +1,18 @@
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, useLoaderData } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import "./Van-Detail.css";
+import { getVanDetail } from "api";
+
+export async function loader({ params }) {
+  return await getVanDetail(params.id);
+}
 
 export default function VanDetail() {
   const { state } = useLocation();
   const searchParams = state?.searchParams || "";
-  const { id } = useParams();
-  const van = getCachedVan(id);
 
-  function getCachedVan(id) {
-    return JSON.parse(localStorage.getItem(`van`));
-  }
+  const van = useLoaderData();
+
   return (
     <div className="van-detail-container">
       <div className="van-detail__link-container">

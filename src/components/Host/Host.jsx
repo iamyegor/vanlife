@@ -2,6 +2,12 @@ import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Host.css";
 import classNames from "classnames";
+import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+
+export function loader() {
+  if (!checkIsLoggedIn()) return redirectToLogin();
+  return null;
+}
 
 export default function Host() {
   function getLinkClasses(isActive) {
