@@ -1,4 +1,4 @@
-import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+import { checkIsLoggedIn, redirectToLogin } from "utils";
 
 export function loader() {
   if (!checkIsLoggedIn()) return redirectToLogin();

@@ -37,6 +37,5 @@ export async function loginUser(creds) {
     };
   }
 
-  console.log(data);
   return data;
 }

@@ -1,7 +1,7 @@
 import "./HostVans.css";
 import { Link, useLoaderData } from "react-router-dom";
 import { getHostVans } from "api";
-import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+import { checkIsLoggedIn, redirectToLogin } from "utils";
 
 export async function loader() {
   if (!checkIsLoggedIn()) return redirectToLogin();

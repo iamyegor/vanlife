@@ -4,7 +4,7 @@ import "./host-van-detail.css";
 import { Link, NavLink } from "react-router-dom";
 import classNames from "classnames";
 import { getHostVanDetail } from "api";
-import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+import { checkIsLoggedIn, redirectToLogin } from "utils";
 
 export async function loader({ params }) {
   if (!checkIsLoggedIn()) return redirect("/login")

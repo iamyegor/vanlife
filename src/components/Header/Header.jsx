@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { RxAvatar, RxCross2 } from "react-icons/rx";
 import "./Header.css";
 
 export default function Header() {
@@ -36,6 +37,17 @@ export default function Header() {
           >
             Vans
           </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? "header__nav-item--active" : "";
+            }}
+            to="login"
+          >
+            <RxAvatar className="header__icon" />
+          </NavLink>
+          <button className="header__logout" onClick={() => localStorage.removeItem("loggedIn")}>
+            <RxCross2 className="header__icon" />
+          </button>
         </div>
       </nav>
     </header>

@@ -3,8 +3,8 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  redirect,
 } from "react-router-dom";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "index.css";
 import "server";
@@ -31,13 +31,13 @@ import HostVanPhotos from "components/HostVanPhotos/HostVanPhotos";
 import HostVanInfo from "components/HostVanInfo/HostVanInfo";
 import HostVanPricing from "components/HostVanPricing/HostVanPricing";
 import NotFound from "pages/NotFound/NotFound";
-import { StrictMode } from "react";
+import Login, { action as loginAction } from "./components/Login/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
-      <Route path="login" element={<h1>The login page goes here</h1>} />
+      <Route path="login" element={<Login />} action={loginAction} />
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} loader={vanDetailLoader} />

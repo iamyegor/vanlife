@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Host.css";
 import classNames from "classnames";
-import { checkIsLoggedIn, redirectToLogin } from "utils/auth";
+import { checkIsLoggedIn, redirectToLogin } from "utils";
 
 export function loader() {
   if (!checkIsLoggedIn()) return redirectToLogin();
