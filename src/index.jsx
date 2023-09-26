@@ -31,13 +31,21 @@ import HostVanPhotos from "components/HostVanPhotos/HostVanPhotos";
 import HostVanInfo from "components/HostVanInfo/HostVanInfo";
 import HostVanPricing from "components/HostVanPricing/HostVanPricing";
 import NotFound from "pages/NotFound/NotFound";
-import Login, { action as loginAction } from "./components/Login/Login";
+import Login, {
+  action as loginAction,
+  loader as loginLoader,
+} from "./components/Login/Login";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
       <Route path="/" element={<Home />} />
-      <Route path="login" element={<Login />} action={loginAction} />
+      <Route
+        path="login"
+        element={<Login />}
+        action={loginAction}
+        loader={loginLoader}
+      />
       <Route path="about" element={<About />} />
       <Route path="vans" element={<Vans />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} loader={vanDetailLoader} />
@@ -68,7 +76,5 @@ function App() {
 
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <StrictMode>
     <App />
-  </StrictMode>
 );

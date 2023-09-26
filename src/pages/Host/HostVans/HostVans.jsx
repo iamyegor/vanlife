@@ -3,8 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import { getHostVans } from "api";
 import { checkIsLoggedIn, redirectToLogin } from "utils";
 
-export async function loader() {
-  if (!checkIsLoggedIn()) return redirectToLogin();
+export async function loader({ request }) {
+  if (!checkIsLoggedIn()) return redirectToLogin(request);
   return await getHostVans();
 }
 

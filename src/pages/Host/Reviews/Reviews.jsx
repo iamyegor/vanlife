@@ -1,7 +1,7 @@
 import { checkIsLoggedIn, redirectToLogin } from "utils";
 
-export function loader() {
-  if (!checkIsLoggedIn()) return redirectToLogin();
+export function loader({ request }) {
+  if (!checkIsLoggedIn()) return redirectToLogin({ request });
   return null;
 }
 

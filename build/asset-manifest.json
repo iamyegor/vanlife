@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.4834d5b2.css",
-    "main.js": "/static/js/main.ddd9af7b.js",
+    "main.css": "/static/css/main.e7526079.css",
+    "main.js": "/static/js/main.5d728f34.js",
     "static/media/home-img.png": "/static/media/home-img.48b5ab0c1f1c5a2ff543.png",
     "static/media/chilling-on-van.jpg": "/static/media/chilling-on-van.840084873cb66d7afb7e.jpg",
     "index.html": "/index.html",
-    "main.4834d5b2.css.map": "/static/css/main.4834d5b2.css.map",
-    "main.ddd9af7b.js.map": "/static/js/main.ddd9af7b.js.map"
+    "main.e7526079.css.map": "/static/css/main.e7526079.css.map",
+    "main.5d728f34.js.map": "/static/js/main.5d728f34.js.map"
   },
   "entrypoints": [
-    "static/css/main.4834d5b2.css",
-    "static/js/main.ddd9af7b.js"
+    "static/css/main.e7526079.css",
+    "static/js/main.5d728f34.js"
   ]
 }

@@ -4,10 +4,11 @@ export function checkIsLoggedIn() {
   return JSON.parse(localStorage.getItem("loggedIn")) || false;
 }
 
-export function redirectToLogin() {
-  const response = redirect("/login");
-  response.body = true;
-  return response;
+export function redirectToLogin(request) {
+  const pathname = new URL(request.url).pathname;
+  return redirectTo(
+    `/login?message=You must log in first&redirectTo=${pathname}`
+  );
 }
 
 export function redirectTo(route) {

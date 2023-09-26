@@ -14,11 +14,16 @@
   flex-direction: column;
 }
 
-.form_title {
-  margin: 0;
+.form__title {
+  margin-bottom: 10px;
 }
 
 .form__error {
+  margin: 0;
+  color: rgb(255, 60, 60);
+}
+
+.form__message {
   margin: 0;
   color: rgb(255, 60, 60);
 }
@@ -34,13 +39,19 @@
   padding-left: 10px;
 }
 
-.form__button{
+.form__button {
   margin-top: 20px;
-  background-color: #ffe0bb;
-  color: #4d4d4d;
+  background-color: #ffb356;
+  color: #ffffff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   width: 100%;
+  font-size: 100%;
   height: 40px;
+}
+
+.form__button:disabled {
+  background-color: gray;
+  cursor: auto;
 }

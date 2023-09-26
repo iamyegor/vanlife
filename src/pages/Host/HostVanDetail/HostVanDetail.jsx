@@ -6,8 +6,8 @@ import classNames from "classnames";
 import { getHostVanDetail } from "api";
 import { checkIsLoggedIn, redirectToLogin } from "utils";
 
-export async function loader({ params }) {
-  if (!checkIsLoggedIn()) return redirect("/login")
+export async function loader({ params, request }) {
+  if (!checkIsLoggedIn()) return redirectToLogin(request);
   return await getHostVanDetail(params.id);
 }
 

@@ -1,4 +1,5 @@
 import chillingOnVan from "../../assets/chilling-on-van.jpg";
+import { Link } from "react-router-dom";
 import "./About.css";
 
 export default function About() {
@@ -23,7 +24,9 @@ export default function About() {
             Your destination is waiting. <br />
             Your van is ready.
           </h2>
-          <button className="about__explore-vans">Explore our vans</button>
+          <Link to="/vans" className="about__explore-vans">
+            Explore our vans
+          </Link>
         </div>
       </div>
     </div>
