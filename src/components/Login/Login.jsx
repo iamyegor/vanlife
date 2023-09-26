@@ -19,7 +19,7 @@ export async function action({ request }) {
   const password = formData.get("password");
 
   if (!email && !password)
-    return "You should fill the email and password fields";
+    return "You must fill the email and password fields to proceed";
 
   const redirectPath =
     new URL(request.url).searchParams.get("redirectTo") || "/host";

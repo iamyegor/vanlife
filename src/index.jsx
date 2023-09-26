@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "index.css";
 import "server";
@@ -35,10 +34,11 @@ import Login, {
   action as loginAction,
   loader as loginLoader,
 } from "./components/Login/Login";
+import Error from "components/Error/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<Layout />}>
+    <Route element={<Layout />} errorElement={<Error />}>
       <Route path="/" element={<Home />} />
       <Route
         path="login"
@@ -47,17 +47,33 @@ const router = createBrowserRouter(
         loader={loginLoader}
       />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} loader={vansLoader} />
-      <Route path="vans/:id" element={<VanDetail />} loader={vanDetailLoader} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        loader={vansLoader}
+        errorElement={<Error />}
+      />
+      <Route
+        path="vans/:id"
+        element={<VanDetail />}
+        loader={vanDetailLoader}
+        errorElement={<Error />}
+      />
 
       <Route path="host" element={<Host />} loader={hostLoader}>
         <Route index element={<Dashboard />} loader={dashboardLoader} />
         <Route path="reviews" element={<Reviews />} loader={reviewsLoader} />
-        <Route path="vans" element={<HostVans />} loader={hostVansLoader} />
+        <Route
+          path="vans"
+          element={<HostVans />}
+          loader={hostVansLoader}
+          errorElement={<Error />}
+        />
         <Route
           path="vans/:id"
           element={<HostVanDetail />}
           loader={hostVanDetailLoader}
+          errorElement={<Error />}
         >
           <Route index element={<HostVanInfo />} />
           <Route path="photos" element={<HostVanPhotos />} />
@@ -75,6 +91,4 @@ function App() {
 }
 
 const root = createRoot(document.getElementById("root"));
-root.render(
-    <App />
-);
+root.render(<App />);

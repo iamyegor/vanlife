@@ -1,20 +1,20 @@
 export async function getVanDetail(id) {
-  return await getVansOrThrowError(`/api/vans/${id}`);
+  return await getVansByUrl(`/api/vans/${id}`);
 }
 
 export async function getVans() {
-  return await getVansOrThrowError("/api/vans");
+  return await getVansByUrl("/api/vans");
 }
 
 export async function getHostVanDetail(id) {
-  return await getVansOrThrowError(`/api/host/vans/${id}`);
+  return await getVansByUrl(`/api/host/vans/${id}`);
 }
 
 export async function getHostVans() {
-  return await getVansOrThrowError("/api/host/vans");
+  return await getVansByUrl("/api/host/vans");
 }
 
-async function getVansOrThrowError(url) {
+async function getVansByUrl(url) {
   const response = await fetch(url);
   if (!response.ok)
     throw new Error("An error occured while trying to download vans.");
