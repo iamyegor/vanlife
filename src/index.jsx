@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import "index.css";
-import "server";
 import About from "pages/About/About";
 import Home from "pages/Home/Home";
 import Vans, { loader as vansLoader } from "pages/Vans/Vans";

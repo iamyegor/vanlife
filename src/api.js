@@ -1,17 +1,57 @@
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  getDocs,
+  collection,
+  doc,
+  getDoc,
+  query,
+  where,
+} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBEDDLGFryAA1TXFE0U9g2u-DMwXtg6BbI",
+  authDomain: "vanlife-2ca9d.firebaseapp.com",
+  projectId: "vanlife-2ca9d",
+  storageBucket: "vanlife-2ca9d.appspot.com",
+  messagingSenderId: "89767901087",
+  appId: "1:89767901087:web:7ee9a8b9fb1c0f7e13afaa",
+  measurementId: "G-H2CEFWDM8L",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const vansCollectionRef = collection(db, "vans");
+
 export async function getVanDetail(id) {
-  return await getVansByUrl(`/api/vans/${id}`);
+  const docRef = doc(db, "vans", id);
+  const vanSnapshot = await getDoc(docRef);
+  return vanSnapshot.data();
 }
 
 export async function getVans() {
-  return await getVansByUrl("/api/vans");
+  const querySnapshot = await getDocs(vansCollectionRef);
+  return getSnapshotDataArray(querySnapshot);
 }
 
 export async function getHostVanDetail(id) {
-  return await getVansByUrl(`/api/host/vans/${id}`);
+  return getVanDetail(id);
 }
 
 export async function getHostVans() {
-  return await getVansByUrl("/api/host/vans");
+  const q = query(vansCollectionRef, where("hostId", "==", 123));
+  const querySnapshot = await getDocs(q);
+  return getSnapshotDataArray(querySnapshot);
+}
+
+function getSnapshotDataArray(querySnapshot) {
+  return querySnapshot.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
 }
 
 async function getVansByUrl(url) {
